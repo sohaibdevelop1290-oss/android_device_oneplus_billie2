@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from billie2 device
 $(call inherit-product, device/oneplus/billie2/device.mk)
 
-# Inherit some common Lineage stuff.
+# Inherit some common Lineage/AOSP stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # =====================================================================
@@ -35,11 +35,8 @@ TARGET_USES_BLUR := true
 BACKGROUND_BLUR_SUPPORTED := true
 
 # 🔒 PRIVATE BUILD FLAGS (Hides Server User & Host Name)
-BUILD_USERNAME := elixir             # اب سرور کا نام شو نہیں ہوگا، صرف 'elixir' یا جو آپ لکھیں وہ آئے گا
-BUILD_HOSTNAME := official-build     # ہوسٹ نیم کی جگہ 'official-build' شو ہوگا
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_USERNAME=$ sohaib \
-    BUILD_HOSTNAME=$ crave 
+BUILD_USERNAME := sohaib
+BUILD_HOSTNAME := crave
 
 PRODUCT_NAME := aosp_billie2
 PRODUCT_DEVICE := billie2
@@ -49,7 +46,10 @@ PRODUCT_MODEL := BE2011
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
+# Combined Build Prop Overrides
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_USERNAME=$(BUILD_USERNAME) \
+    BUILD_HOSTNAME=$(BUILD_HOSTNAME) \
     PRIVATE_BUILD_DESC="OnePlusN100-user 11   release-keys" \
     TARGET_DEVICE=OnePlusN100 \
     TARGET_PRODUCT=OnePlusN100
