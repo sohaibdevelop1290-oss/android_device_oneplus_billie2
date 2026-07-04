@@ -24,6 +24,23 @@ $(call inherit-product, device/oneplus/billie2/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
+# =====================================================================
+# 🛠️ SYSTEM OPTIMIZATIONS & PRIVATE BUILD CONFIGS
+# =====================================================================
+
+# Graphics & Performance Optimizations
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_BUILD_APEX_IMAGE := true
+TARGET_USES_BLUR := true
+BACKGROUND_BLUR_SUPPORTED := true
+
+# 🔒 PRIVATE BUILD FLAGS (Hides Server User & Host Name)
+BUILD_USERNAME := elixir             # اب سرور کا نام شو نہیں ہوگا، صرف 'elixir' یا جو آپ لکھیں وہ آئے گا
+BUILD_HOSTNAME := official-build     # ہوسٹ نیم کی جگہ 'official-build' شو ہوگا
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_USERNAME=$ sohaib \
+    BUILD_HOSTNAME=$ crave 
+
 PRODUCT_NAME := aosp_billie2
 PRODUCT_DEVICE := billie2
 PRODUCT_MANUFACTURER := OnePlus
