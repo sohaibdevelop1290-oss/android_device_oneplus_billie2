@@ -24,7 +24,37 @@ $(call inherit-product, device/oneplus/billie2/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_billie2
+
+# --------------------------------------------------------
+# RisingOS Build Flags
+# --------------------------------------------------------
+
+# Maintainer Name
+RISING_MAINTAINER :="Sohaib"
+
+# Chipset and Maintainer Properties
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Snapdragon 460" \
+    RisingMaintainer="Sohaib"
+
+# Blur Support
+TARGET_ENABLE_BLUR := false
+
+# Camera Selection (Set to true if you don't want to ship aperture camera)
+PRODUCT_NO_CAMERA := false
+
+# Launcher Selection
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := false
+
+# GMS (Google Apps) Flags
+WITH_GMS := true
+TARGET_CORE_GMS := true
+TARGET_CORE_GMS_EXTRAS := true 
+TARGET_INCLUDE_GOOGLE_DIALER := false
+
+
+PRODUCT_NAME := RisingOS_billie2
 PRODUCT_DEVICE := billie2
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
