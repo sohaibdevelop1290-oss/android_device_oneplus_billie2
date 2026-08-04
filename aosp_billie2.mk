@@ -22,7 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/billie2/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/Aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 PRODUCT_NAME := Aosp_billie2
 PRODUCT_DEVICE := billie2
