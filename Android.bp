@@ -20,3 +20,11 @@ install_symlink {
     installed_location: "firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini",
     symlink_target: "/vendor/etc/wifi/WCNSS_qcom_cfg.ini",
 }
+
+cc_defaults {
+    name: "vendor_init_defaults",
+    header_libs: ["generated_kernel_headers"],
+    include_dirs: [
+        "system/core/init",
+    ],
+}
