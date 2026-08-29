@@ -30,6 +30,18 @@ PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := BE2011
 
+# ======================================================
+# crDroid Maintainer & Build Optimizations
+# ======================================================
+
+# Maintainer Information
+CR_MAINTAINER := "Sohaib"
+CR_DEVELOPER := "Sohaib"
+
+# Build Optimization
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+
+
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
